@@ -25,10 +25,34 @@ class _ViewLineChartState extends State<ViewLineChart> {
           gridData: FlGridData(
             show: false,
           ),
-          // titlesData: FlTitlesData(
-          //   show: true,
-          //   bottomTitles:
-          // )
+          titlesData: FlTitlesData(
+            show: true,
+            bottomTitles: SideTitles(
+              showTitles: true,
+              reservedSize: 2,
+              getTextStyles: (context, value) => TextStyle(color: lightTextColor,
+              fontWeight: FontWeight.bold, fontSize: 14),
+              getTitles: (value) {
+                switch(value.toInt()){
+                  case 1:
+                    return "Sun";
+                  case 4:
+                    return "Mon";
+                  case 7:
+                    return "Tue";
+                  case 10:
+                    return "Wed";
+                  case 13:
+                    return "Thu";
+                  case 16:
+                    return "Fri";
+                  case 19:
+                    return "Sat";
+                }
+                return '';
+              }
+            )
+          ),
           borderData: FlBorderData(
             show: false,
           ),
