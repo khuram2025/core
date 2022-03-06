@@ -1,6 +1,9 @@
 import 'package:core/dashboard/controllers/controller.dart';
 import 'package:core/dashboard/screens/dashboard.dart';
+import 'package:core/getX/detail/view/detail.dart';
+import 'package:core/getX/home/view/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 
@@ -14,16 +17,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         title: "Cahnnab",
-        home: MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (context) => Controller())
-          ],
-          child: DHomeScreen(),
-        ),
+        // home: MultiProvider(
+        //   providers: [
+        //     ChangeNotifierProvider(create: (context) => Controller())
+        //   ],
+        //   child: DHomeScreen(),
+        // ),
       debugShowCheckedModeBanner: false,
-
+      getPages: [
+        GetPage(name: '/home', page: ()=>GHomeScreen() ),
+        GetPage(name: '/detail', page: ()=>GDetailScrenn()),
+      ],
+      initialRoute: '/home',
     );
   }
 }
