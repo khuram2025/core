@@ -1,3 +1,4 @@
+import 'package:core/mobile_shop/components/detail_screen.dart';
 import 'package:core/mobile_shop/components/product_card.dart';
 import 'package:core/mobile_shop/components/section_title.dart';
 import 'package:core/mobile_shop/models/Product.dart';
@@ -33,7 +34,11 @@ class NewArivalProducts extends StatelessWidget {
                         title: demo_product[index].title,
                         image: demo_product[index].image,
                         price: demo_product[index].price,
-                        press: (){},
+                        press: (){
+                          Navigator.push(context, MaterialPageRoute
+                            (builder: (context) => MobileShopDetailScreen(product: demo_product[index])
+                          ));
+                        },
 
                       ),
                     )),
