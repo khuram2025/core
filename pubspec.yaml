@@ -102,3 +102,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Gordita
+      fonts:
+        - asset: assets/fonts/Gordita_Regular.otf
+        - asset: assets/fonts/Gordita_Medium.otf
+          weight: 500
+        - asset: assets/fonts/Gordita_Bold.otf
+          weight: 700
+        - asset: assets/fonts/Gordita_Light.otf
+          weight: 300

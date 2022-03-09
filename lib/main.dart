@@ -2,10 +2,13 @@ import 'package:core/dashboard/controllers/controller.dart';
 import 'package:core/dashboard/screens/dashboard.dart';
 import 'package:core/getX/detail/view/detail.dart';
 import 'package:core/getX/home/view/home.dart';
+import 'package:core/mobile_shop/mobile_home.dart';
 import 'package:core/responsive_email/ehome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+
+import 'dashboard/constants/constants.dart';
 
 
 void main() {
@@ -20,19 +23,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: "Cahnnab",
-        // home: MultiProvider(
-        //   providers: [
-        //     ChangeNotifierProvider(create: (context) => Controller())
-        //   ],
-        //   child: DHomeScreen(),
-        // ),
+      theme: ThemeData(
+        scaffoldBackgroundColor: bgColor,
+        primarySwatch: Colors.blue,
+        fontFamily: "Gordita",
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
+          textTheme: const TextTheme(
+      bodyText2: TextStyle(color: Colors.black54),
+    ),
+      ),
+
       debugShowCheckedModeBanner: false,
       getPages: [
         GetPage(name: '/home', page: ()=>GHomeScreen() ),
         GetPage(name: '/detail', page: ()=>GDetailScrenn()),
         GetPage(name: '/ehome', page: ()=>EHomeScreen()),
+        GetPage(name: '/mhome', page: ()=>MobileHomeScreen()),
       ],
-      initialRoute: '/ehome',
+      initialRoute: '/mhome',
     );
   }
 }
