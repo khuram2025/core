@@ -8,14 +8,18 @@ class SideBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ProjectCard(
-      data:
-      ProjectCardData(
-          projectImage: AssetImage(ImageRasterPath.logo1),
-          projectName: "Testing",
-          percent: 8,
-          releaseTime: DateTime.now()),
+    return Column(
+      children: [
+        ProjectCard(
+          data:
+          ProjectCardData(
+              projectImage: AssetImage(ImageRasterPath.logo1),
+              projectName: "Testing",
+              percent: 0.8,
+              releaseTime: DateTime.now()),
 
+        ),
+      ],
     );
   }
 }
