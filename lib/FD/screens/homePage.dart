@@ -1,3 +1,4 @@
+import 'package:core/FD/screens/sidebar.dart';
 import 'package:flutter/material.dart';
 
 class FDHomePage extends StatelessWidget {
@@ -6,9 +7,13 @@ class FDHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Dashboard"),
-      ),
+      body: Row(
+        children: [
+          Expanded(child: SideBar(), flex: 3,),
+          Expanded(child: Container(color: Colors.green,), flex: 9,),
+          Expanded(child: Container(color: Colors.blue,), flex: 4,),
+        ],
+      )
     );
   }
 }
